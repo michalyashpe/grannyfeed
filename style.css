@@ -1,0 +1,126 @@
+body{
+  margin:0px;
+  background: #284352;
+  z-index:0;
+  margin:0;
+  padding:0;
+  font:normal 16px/20px Lekton, sans-serif;
+  /*-webkit-filter: blur(3px)*/
+}
+
+#wrapper{
+  position:absolute;
+  padding:100px 50px;
+  width:500px;
+  min-height: 100%;
+  margin-left: 0px;
+  top:0;
+  background: rgba(232, 232, 232, .9);
+
+  font:normal 16px/20px Lekton, sans-serif;
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+}
+
+.text{
+  position: relative;
+  top:40px;
+  padding-right: 50px;
+}
+
+.text h1{
+  font-weight:normal;
+  line-height:130%;
+}
+
+.text h2{
+  font-weight:normal;
+  line-height:130%;
+}
+
+.controls div{
+  display:inline-block;
+  padding:5px;
+  margin:1px;
+  color:#fff;
+  border:1px solid #fff;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  -o-border-radius:4px;
+  border-radius:4px;
+}
+
+button{
+  display:inline-block;
+  padding:5px;
+  margin:1px;
+  color:#fff;
+  border:1px solid #fff;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  -o-border-radius:4px;
+  border-radius:4px;
+  background: rgba(0, 0, 0, 0.72);
+  cursor: pointer;
+}
+
+button:hover{
+  background:rgba(255,255,255,.9);
+  color:#000;
+}
+
+#controls div:hover:not(.counter){
+  background:rgba(255,255,255,.9);
+  color:#000;
+}
+
+#controls div:not(.counter){
+  background: rgb(190, 41, 16);
+  cursor:pointer;
+}
+
+#controls.fullScreen_controls div:hover:not(.counter){
+  background:rgba(255,255,255,.9);
+  color:#000;
+}
+
+#controls.fullScreen_controls div:not(.counter){
+  background: rgba(0, 0, 0, 0.82);
+  cursor:pointer;
+}
+
+#controls div.sel{
+  background:rgba(255,255,255,.9);
+}
+
+#thumbnails{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,.4);
+  line-height: 0;
+  font-size: 0;
+  padding: 4px;
+}
+
+#thumbnails img{
+  margin: 2px;
+  width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  border: 3px solid transparent;
+}
+
+#thumbnails img.sel{
+  margin: 2px;
+  width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  border: 3px solid white;
+}
+
