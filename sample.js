@@ -37,7 +37,7 @@ function makeApiCall() {
 function makeRequest()
 {
 	// var request = gapi.client.drive.files.list({'maxResults': 5 });
-	var folder_id = '0B-vyvs8oIgKXelNOdnNFOHZoVTQ'
+	var folder_id = '0B-vyvs8oIgKXVlNDZUU3N084QXc'
 	var request = gapi.client.request({
 		'path': "/drive/v2/files?q='"+ folder_id + "' in parents",
 		'method': 'GET',
@@ -45,6 +45,7 @@ function makeRequest()
 		});
 	
 	request.execute(function(resp) {		  
+		console.log(resp);
 		for (i=0; i<resp.items.length; i++) {
 			var titulo = resp.items[i].title;
 			var fechaUpd = resp.items[i].modifiedDate;
@@ -53,15 +54,13 @@ function makeRequest()
 			var userAltLink = resp.items[i].alternateLink;
 			var selfLink = resp.items[i].selfLink;
 			var alternateLink = resp.items[i].alternateLink;
-			console.log(resp);
-			var link = "https://googledrive.com/host/" + folder_id +"/" + titulo;
-
+			var file_id = resp.items[i].id;
+			
 			var fileInfo = document.createElement('li');
 			fileInfo.appendChild(document.createTextNode('TITLE: ' + titulo + ' - LAST MODIF: ' + fechaUpd + ' - BY: ' + userUpd ));
 			document.getElementById('content').appendChild(fileInfo);
-			// document.getElementById('content').insertAdjacentHTML('beforeend', '<img width="100" src="'+ link + '"/>');
-
-			var html = '<iframe src="http://docs.google.com/gview?url="'+alternateLink+'"&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>';
+			url = "http://drive.google.com/uc?export=view&id="+ file_id
+			var html = '<img src="' + url+ '"/>';
 			document.getElementById('content').insertAdjacentHTML('beforeend', html);
 		}
 	});	
