@@ -1,6 +1,7 @@
 var clientId = '696513917405-tatjerfs329qthdg79s2ngscikok4k63.apps.googleusercontent.com';
 var apiKey = 'AIzaSyAE29U9mj4Wq_5iW3128Ig0irnqLdzcytE';
-var scopes = 'https://www.googleapis.com/auth/drive';
+// var scopes = 'https://www.googleapis.com/auth/drive';
+var scopes = 'https://www.googleapis.com/auth/drive.readonly';
 
 
 function handleClientLoad() {
@@ -30,14 +31,32 @@ function handleAuthClick(event) {
 	return false;
 }
 
-function makeApiCall() {  
-	gapi.client.load('drive', 'v2', makeRequest);   
+function makeApiCall() { 
+	gapi.client.load('drive', 'v2', getFolderId);  
+	
 }
 
-function makeRequest()
+
+function getFolderId() {
+	var folder_name = "grannyfeed-folder";
+	var request = gapi.client.request({
+	'path': "/drive/v2/files?q=title='"+ folder_name +"'",
+	'method': 'GET',
+	});
+	request.execute(function(resp){
+		var folder_id = resp.items[0].id
+		gapi.client.load('drive', 'v2', getPics(folder_id));   
+	});
+	
+}
+
+
+function getPics(folder_id)
 {
 	// var request = gapi.client.drive.files.list({'maxResults': 5 });
-	var folder_id = '0B-vyvs8oIgKXVlNDZUU3N084QXc'
+	// var folder_id = '0B-vyvs8oIgKXVlNDZUU3N084QXc'
+
+
 	var request = gapi.client.request({
 		'path': "/drive/v2/files?q='"+ folder_id + "' in parents",
 		'method': 'GET',
