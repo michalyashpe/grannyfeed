@@ -1,3 +1,0 @@
-# user log-in
-# get the pics folder id
-# show images from this foler on the page
