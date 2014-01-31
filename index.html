@@ -2,8 +2,8 @@
 	<head>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" src="mb.bgndGallery.js"></script>
+		<script type="text/javascript" src="sample.js"></script>
 		<script type="text/javascript" src="effects.js"></script>
-		<script type="text/javascript" src="nagarut.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
@@ -54,8 +54,10 @@
 						<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 					</form>
 				</div>
-				<!--End mc_embed_signup-->
-				<p style="font-size: 12px; line-height: 12px">All the Photos are right reserved. <br>© 2013 - ∞ Matteo Bicocchi</p>
+				<button id="authorize-button" style="visibility: hidden">Authorize</button>
+				<button id="authorize-button" style="visibility: hidden">Authorize</button>
+				<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+				
 			</div>
 
 		</div>

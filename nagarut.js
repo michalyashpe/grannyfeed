@@ -12,7 +12,6 @@ $(function(){
 					$(this).CSSAnimate({marginLeft:-450, background:"rgba(255, 192, 0, 0.8)"},200);
 					$("body").css({overflow:"hidden"});
 				});
-
 		$.mbBgndGallery.buildGallery({
 			containment:"body",
 			timer:2000,
@@ -33,12 +32,13 @@ $(function(){
 
 			// else:
 
-			images:[
-				// "https://googledrive.com/host/0B-vyvs8oIgKXQTlZbkl0R0lGOXM/brain.png",
-				"http://images4.fanpop.com/image/photos/14700000/So-cute-puppies-14749028-1600-1200.jpg",
-				"http://digntaswpp.com/wp-content/uploads/2013/10/Cute-Cat-Wallpaper-HD.jpg"
-			],
+			// images:[
+			// 	// "https://googledrive.com/host/0B-vyvs8oIgKXQTlZbkl0R0lGOXM/brain.png",
+			// 	"http://images4.fanpop.com/image/photos/14700000/So-cute-puppies-14749028-1600-1200.jpg",
+			// 	"http://digntaswpp.com/wp-content/uploads/2013/10/Cute-Cat-Wallpaper-HD.jpg"
+			// ],
 
+			images: ["http://drive.google.com/uc?export=view&id=0B-vyvs8oIgKXcWY5V3Zra0VLeTA", "http://drive.google.com/uc?export=view&id=0B-vyvs8oIgKXWDc3aFpPUXRzMEk", "http://drive.google.com/uc?export=view&id=0B-vyvs8oIgKXWF9mT3I3b0dfRms", "http://drive.google.com/uc?export=view&id=0B-vyvs8oIgKXS1VsSHBNVGpaNzA", "http://drive.google.com/uc?export=view&id=0B-vyvs8oIgKXd09sUzNmdTZ6SDQ", "http://drive.google.com/uc?export=view&id=0B-vyvs8oIgKXaHZ5bUxaSzc5WkE"],
 			onStart:function(){},
 			onPause:function(){},
 			onPlay:function(opt){},
@@ -47,4 +47,4 @@ $(function(){
 			onPrev:function(opt){}
 		});
 
-	});
+	});	
